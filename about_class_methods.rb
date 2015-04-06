@@ -156,6 +156,7 @@ class AboutClassMethods < Neo::Koan
   end
 
 
+  #no idea in this test!
   def test_other_objects_are_not_affected_by_these_singleton_methods
     fido = Dog.new
     rover = Dog.new
@@ -168,6 +169,5 @@ class AboutClassMethods < Neo::Koan
       rover.wag
     end
   end
-
 
 end
