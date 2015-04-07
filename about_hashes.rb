@@ -90,5 +90,5 @@ class AboutHashes < Neo::Koan
     assert_equal ["dos"], hash[:two]
     assert_equal [], hash[:three]
   end
-  
+
 end
