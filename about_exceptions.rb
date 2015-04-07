@@ -6,10 +6,10 @@ class AboutExceptions < Neo::Koan
   end
 
   def test_exceptions_inherit_from_Exception
-    assert_equal __, MySpecialError.ancestors[1]
-    assert_equal __, MySpecialError.ancestors[2]
-    assert_equal __, MySpecialError.ancestors[3]
-    assert_equal __, MySpecialError.ancestors[4]
+    assert_equal RuntimeError, MySpecialError.ancestors[1]
+    assert_equal StandardError, MySpecialError.ancestors[2]
+    assert_equal Exception, MySpecialError.ancestors[3]
+    assert_equal Object, MySpecialError.ancestors[4]
   end
 
   def test_rescue_clause
@@ -20,10 +20,10 @@ class AboutExceptions < Neo::Koan
       result = :exception_handled
     end
 
-    assert_equal __, result
+    assert_equal :exception_handled, result
 
-    assert_equal __, ex.is_a?(StandardError), "Should be a Standard Error"
-    assert_equal __, ex.is_a?(RuntimeError),  "Should be a Runtime Error"
+    assert_equal StandardError, ex.is_a?(StandardError), "Should be a Standard Error"
+    assert_equal AboutExceptions::Error, ex.is_a?(RuntimeError),  "Should be a Runtime Error"
 
     assert RuntimeError.ancestors.include?(StandardError),
       "RuntimeError is a subclass of StandardError"
