@@ -70,6 +70,5 @@ class AboutInheritance < Neo::Koan
       super.bark + ", GROWL"
     end
   end
-  
 
 end
