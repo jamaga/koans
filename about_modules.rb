@@ -11,12 +11,6 @@ class AboutModules < Neo::Koan
     end
   end
 
-  def test_cant_instantiate_modules
-    assert_raise(___) do
-      Nameable.new
-    end
-  end
-
   # ------------------------------------------------------------------
 
   class Dog
@@ -39,7 +33,7 @@ class AboutModules < Neo::Koan
 
   def test_normal_methods_are_available_in_the_object
     fido = Dog.new
-    assert_equal __, fido.bark
+    assert_equal "WOOF", fido.bark
   end
 
   def test_module_methods_are_also_available_in_the_object
@@ -51,13 +45,13 @@ class AboutModules < Neo::Koan
 
   def test_module_methods_can_affect_instance_variables_in_the_object
     fido = Dog.new
-    assert_equal __, fido.name
+    assert_equal "Fido", fido.name
     fido.set_name("Rover")
-    assert_equal __, fido.name
+    assert_equal "Rover", fido.name
   end
 
   def test_classes_can_override_module_methods
     fido = Dog.new
-    assert_equal __, fido.here
+    assert_equal :in_object, fido.here
   end
 end

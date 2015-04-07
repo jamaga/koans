@@ -97,5 +97,5 @@ class AboutMethods < Neo::Koan
     rover = Dog.new
     assert_equal "Fido", rover.name
   end
-  
+
 end
